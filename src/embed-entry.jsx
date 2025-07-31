@@ -1,3 +1,7 @@
+if (typeof window.process === "undefined") {
+  window.process = { env: { NODE_ENV: "production" } };
+}
+
 import React from "react";
 import { createRoot } from "react-dom/client";
 import ChatBot from "./components/chatbot.jsx"; // adjust if casing differs
