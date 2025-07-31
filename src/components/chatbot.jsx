@@ -161,8 +161,27 @@ export default function ChatBot() {
 
       {/* Popup Chat Teaser */}
       {showPopup && (
-        <div className="chat-teaser">
-          <p style={{ fontSize: "14px", margin: 0 }}>
+        <div
+          style={{
+            position: "fixed",
+            bottom: "100px",
+            right: "20px",
+            backgroundColor: "#fff7ca",
+            padding: "12px 16px",
+            borderRadius: "12px",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+            maxWidth: "260px",
+            fontSize: "14px",
+            zIndex: 10000,
+            display: "flex",
+            flexDirection: "column",
+            gap: "6px",
+            lineHeight: 1.2,
+            color: "#1f1f1f",
+            cursor: "default",
+          }}
+        >
+          <p style={{ margin: 0 }}>
             Chat with our AI assistant for instant help!
           </p>
           <button
@@ -171,14 +190,14 @@ export default function ChatBot() {
               setIsOpen(true);
             }}
             style={{
-              marginTop: "8px",
-              color: "#fd1616ff",
-              background: "none",
+              alignSelf: "flex-start",
+              backgroundColor: "transparent",
               border: "none",
+              padding: 0,
+              color: "#fd1616ff",
               fontSize: "13px",
               textDecoration: "underline",
               cursor: "pointer",
-              padding: 0,
             }}
           >
             Open Chat
