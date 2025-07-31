@@ -58,9 +58,19 @@ export default function ChatBot() {
 
   // Show popup after 8 seconds
   useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 8000);
+    if (isOpen) {
+      setShowPopup(false);
+      return; // don’t schedule the teaser when chat is already open
+    }
+
+    const timer = setTimeout(() => {
+      if (!isOpen) {
+        setShowPopup(true);
+      }
+    }, 8000);
+
     return () => clearTimeout(timer);
-  }, []);
+  }, [isOpen]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
