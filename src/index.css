@@ -1,0 +1,279 @@
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* index.css */
+.chat-teaser {
+  position: fixed;
+  bottom: 20px;
+  right: 100px;
+  background-color: #0f172a;
+  color: white;
+  border: 1px solid #efe9e9ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 12px 16px;
+  z-index: 9999;
+  max-width: calc(100vw - 40px);
+}
+
+@media (max-width: 500px) {
+  .chat-teaser {
+    right: 85px;
+    margin-left: 10px;
+  }
+}
+
+.hero-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00ffc8;
+}
+
+.hero-subtext {
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  max-width: 500px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .hero-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
+
+
+.powered-by-text {
+  font-size: 3rem;
+  max-width: 600px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.powered-by-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.powered-by-highlight {
+  color: #0095ff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .powered-by-text {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
+
+
+.chatbot-info-section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.chatbot-info-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.chatbot-info-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.features-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.cta-box {
+  background-color: #0f172a;
+  border: 1px solid #2c3e50;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.cta-button {
+  background-color: #0095ff;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #007edb;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .chatbot-info-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .chatbot-info-section p,
+  .features-list li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  nav div[style*="hamburger"] {
+    display: block !important;
+  }
+}
+
+.laser-button {
+  position: relative;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+
+.laser-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #00f0ff, #3b82f6);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+  box-shadow: 0 0 10px #00f0ff;
+  z-index: -1;
+}
+
+.laser-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+
+
+
+
